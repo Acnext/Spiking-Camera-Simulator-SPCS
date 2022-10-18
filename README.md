@@ -8,7 +8,9 @@
 
 
 This repository contains the official source code for Spiking Camera Simulator (SPCS)
+
 (# Equally contributed, * Corresponding)
+
 The instructions will be updated soon...
 
 
