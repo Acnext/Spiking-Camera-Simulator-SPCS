@@ -23,7 +23,14 @@ numpy >= 1.22.0
 opencv-python >= 4.6.0.66
 Pillow >= 9.2.0
 ```
-The code may be compatible with lower versions.
+The code may be compatible with lower versions. Note that we use the python built in blender. For installing related dependencies, you can use
+
+```
+python -m pip install <packages>
+
+```
+where ```python``` needs to be the Python executable that Blender comes installed with
+## 
 
 ## Citation
 
