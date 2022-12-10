@@ -23,13 +23,14 @@ numpy >= 1.22.0
 opencv-python >= 4.6.0.66
 Pillow >= 9.2.0
 ```
-The code may be compatible with lower versions. Note that we use the python built in blender. For installing related dependencies, you can use
-
+The code may be compatible with lower versions. Note that we use the python built in blender. For installing related dependencies, you can use,
 ```
 python -m pip install <packages>
-
 ```
-where ```python``` needs to be the Python executable that Blender comes installed with
+where ```python``` needs to be the python executable that Blender comes installed with. You can run the following code inside of Blender to get the directory of python executable,
+```
+import sys; print(sys.executable)
+```
 ## 
 
 ## Citation
