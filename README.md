@@ -13,7 +13,17 @@ This repository contains the official source code for Spiking Camera Simulator (
 
 The instructions will be updated soon...
 
+## Prerequisites
 
+```
+Blender >= 3.0
+geomdl >= 5.3.1
+matplotlib >= 3.5.3
+numpy >= 1.22.0
+opencv-python >= 4.6.0.66
+Pillow >= 9.2.0
+```
+The code may be compatible with lower versions.
 
 ## Citation
 
