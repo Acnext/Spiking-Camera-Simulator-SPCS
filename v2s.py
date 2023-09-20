@@ -9,19 +9,10 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import copy
 #w，h is resolution of image，frame_tot is total number of images，file_name is the directory of image
-def get_spike(in_filepath = "E:\\image\\crash\\", out_filepath = "E:\\image\\crash\\spike\\", w = 400, h = 250, threshold = 400,  frame_start = 145000, frame_end = 145000 + 500):
+def get_spike(in_filepath = "E:\\image\\crash\\", out_filepath = "E:\\image\\crash\\spike\\", w = 400, h = 250, threshold = 256,  frame_start = 145000, frame_end = 145000 + 500):
     accumulator = np.zeros((h, w))
     byte = 0
     pos = 0
-    IE = 1 #暗电流分布期望
-    Isigma = 0.008 #暗电流分布方差
-    UE = 0#阈值分布期望
-    Usigma = 3#阈值分布方差
-    CE = 1#电容分布期望
-    Csigma = 0.027451#电容分布方差
-    #print(struct.pack('??', True, False))
-    noise_U = np.random.normal(UE, Usigma, (h, w))
-    noise_C = np.random.normal(CE, Csigma, (h, w))
     f = open(out_filepath + "test.dat", 'wb')
     for i in range(frame_start, frame_end + 1):
         print(i)
@@ -36,10 +27,6 @@ def get_spike(in_filepath = "E:\\image\\crash\\", out_filepath = "E:\\image\\cra
                 #print(b)
                 #print(img[a][b])
                 accumulator[a][b] += img[a][b]
-                #accumulator[a][b] *= np.random.normal(IE, Isigma, 1)
-                #if accumulator[a][b] >= (threshold + noise_U[a][b]) * noise_C[a][b]: #np.random.normal(CE, Csigma, 1))
-                #if a == 0 and b == 0:
-                 #   accumulator[a][b] = 0
                 if accumulator[a][b] >= threshold:
                     accumulator[a][b] -= threshold
                     byte = byte | (1 << (pos))
